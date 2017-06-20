@@ -4,12 +4,12 @@ function translate(message) {
 
 function translateWord(word) {
   let firstLetter = word[0];
-  let ending = firstLetterIsVowel(firstLetter) ? 'way' : 'ay';
+  let ending = isVowel(firstLetter) ? 'way' : 'ay';
 
   return word.substring(1, word.length) + firstLetter + ending;
 };
 
-function firstLetterIsVowel(firstLetter) {
+function isVowel(firstLetter) {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
 
   return vowels.includes(firstLetter.toLowerCase());
