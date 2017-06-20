@@ -1,8 +1,5 @@
 function translate(message) {
-  let words = message.split(' ');
-  let translatedMessage = words.map(word => translateWord(word));
-
-  return translatedMessage.join(' ');
+  return message.split(' ').map(word => translateWord(word)).join(' ');
 };
 
 function translateWord(word) {
