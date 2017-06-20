@@ -1,35 +1,21 @@
 function translate(message) {
   let words = message.split(' ');
-  let translatedMessage = [];
-
-  words.forEach(word => {
-    let translatedWord = translateWord(word);
-    translatedMessage.push(translatedWord);
-  });
+  let translatedMessage = words.map(word => translateWord(word));
 
   return translatedMessage.join(' ');
 };
 
 function translateWord(word) {
   let firstLetter = word[0];
+  let ending = firstLetterIsVowel(firstLetter) ? 'way' : 'ay';
 
-  if (firstLetterIsVowel(firstLetter)) {
-    word = word.substring(1, word.length) + firstLetter + 'way';
-  } else {
-    word = word.substring(1, word.length) + firstLetter + 'ay';
-  }
-
-  return word;
+  return word.substring(1, word.length) + firstLetter + ending;
 };
 
 function firstLetterIsVowel(firstLetter) {
   let vowels = ['a', 'e', 'i', 'o', 'u'];
 
-  if (vowels.includes(firstLetter.toLowerCase())) {
-    return true;
-  } else {
-    return false;
-  }
+  return vowels.includes(firstLetter.toLowerCase());
 };
 
 console.log('message:', translate('hello how are you today'));
