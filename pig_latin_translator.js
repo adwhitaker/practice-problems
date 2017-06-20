@@ -13,7 +13,7 @@ function translateWord(word) {
 };
 
 function firstLetterIsVowel(firstLetter) {
-  let vowels = ['a', 'e', 'i', 'o', 'u'];
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
 
   return vowels.includes(firstLetter.toLowerCase());
 };
